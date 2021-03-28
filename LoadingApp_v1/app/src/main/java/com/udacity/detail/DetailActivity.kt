@@ -1,9 +1,7 @@
 package com.udacity.detail
 
-import android.app.PendingIntent
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.udacity.MainActivity
@@ -15,8 +13,6 @@ class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: FragmentDetailBinding
 
-    // var status = " "
-    var filename = " "
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,29 +30,18 @@ class DetailActivity : AppCompatActivity() {
         }
 
 
-        //return the same url
-       val item1 = intent ?: return
-       val itemvalue = PendingIntent.getActivity(applicationContext, 0, item1, 0)
-
-      //  filename = "File Name: $items"
-        filename = "File Name: $itemvalue"
-        Log.i("URL LINK", filename)
+        val filename: String = intent.getStringExtra("fileName").toString()
 
 
-        //do this first
-        binding.downloadInfo = this
-        if (filename != null) {
-       // if (item != null) {
-          // intentValue = "SUCCESS"       //this prints the status to the results activity
-            binding.fileinfoname.text = "The file name: $filename"
-            binding.filestatusview.text = getString(R.string.success)
-            binding.filestatusview.setTextColor(getColor(R.color.successtext))
+        //do this first     dont need this anymore
+       // binding.downloadInfo = this
 
-        } else {
-            // FAILED
-            binding.filestatusview.text = getString(R.string.failed)
-            binding.filestatusview.setTextColor(getColor(R.color.failuretext))
-        }
+
+        // intentValue = "SUCCESS"       //this prints the status to the results activity
+        binding.fileinfoname.text = filename
+        binding.filestatusview.text = getString(R.string.success)
+        binding.filestatusview.setTextColor(getColor(R.color.successtext))
+
     }
 }
 
