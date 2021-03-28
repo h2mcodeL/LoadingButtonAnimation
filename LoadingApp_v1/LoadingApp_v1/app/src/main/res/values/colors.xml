@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#07C2AA</color>
+    <color name="colorPrimaryDark">#004349</color>
+    <color name="colorAccent">#F9A825</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="buttonColor">#A718CF</color>
+    <color name="loadingColor">#000000</color>
+    <color name="completeColor">#FF9800</color>
+    <color name="circleColor">#5AC6CF</color>
+    <color name="arrowColor">#000</color>
+    <color name="textColor">#1E1C1C</color>
+    <color name="successtext">#4CAF50</color>
+    <color name="failuretext">#F44336</color>
+</resources>
